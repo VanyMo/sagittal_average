@@ -13,3 +13,7 @@ sagittal_average_run = "sagittal_average.command:process"
 packages = [
   "src/sagittal_average",
 ]
+
+[project.dependencies]
+numpy = "^1.25"
+pytest = "^8.3"

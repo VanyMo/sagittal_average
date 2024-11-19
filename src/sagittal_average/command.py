@@ -1,8 +1,10 @@
-from .sagittal_brain import run_averages
-from argparse import ArgumentParser
+from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
+
+from sagittal_average import run_averages
 
 def process():
-    parser = ArgumentParser(description="Calculates the average for each sagittal-horizontal plane.")
+    parser = ArgumentParser(description="Calculates the average for each sagittal-horizontal plane.",
+                            formatter_class=ArgumentDefaultsHelpFormatter)
     parser.add_argument('file_input', nargs='?', default="brain_sample.csv",
                         help="Input CSV file with the results from scikit-brain binning algorithm.")
     parser.add_argument('--file_output', '-o', default="brain_average.csv",
